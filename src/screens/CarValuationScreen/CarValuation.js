@@ -140,8 +140,8 @@ function CarValuation() {
             valuationResult: valuationResponse,
           },
         });
-        setIsLoading(false);
-
+        setIsLoading(false)
+        })
       .post("http://localhost:8080/car/valuation", formData)
       .then((res) => {
         const valuationResponse = res.data.result.data;
@@ -345,7 +345,7 @@ function CarValuation() {
   var manufactureYears = [];
   for (let year = 2004; year <= 2024; year++) {
     manufactureYears.push(year);
-  }  
+  }
 
   return (
     <div
