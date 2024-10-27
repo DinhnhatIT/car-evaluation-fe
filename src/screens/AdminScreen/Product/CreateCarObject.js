@@ -25,7 +25,7 @@ const CreateCarObject = () => {
     setErrorMessage('');
 
     try {
-      axios.post('https://car-evaluation-be.onrender.com/addCar', inputData)
+      axios.post('https://car-evaluation-be.tripllery.com/addCar', inputData)
         .then(res => {
           alert("Thêm xe thành công!");
           navigate('/admin/car-list');

@@ -13,7 +13,7 @@ const AdminLogin = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('https://car-evaluation-be.onrender.com/auth/login', {
+            const response = await axios.post('https://car-evaluation-be.tripllery.com/auth/login', {
                 userName,
                 password
             });

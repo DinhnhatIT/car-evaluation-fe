@@ -22,7 +22,7 @@ function Result() {
       if (location.state) {
         try {
           const response = await axios.post(
-            "https://car-evaluation-be.onrender.com/car/valuation",
+            "https://car-evaluation-be.tripllery.com/car/valuation",
             {
               carBrand: location.state.carBrand,
               carModel: location.state.carModel,

@@ -22,7 +22,7 @@ function CarValuation() {
 
   useEffect(() => {
     axios
-      .get("https://car-evaluation-be.onrender.com/car/brands")
+      .get("https://car-evaluation-be.tripllery.com/car/brands")
       .then((res) => {
         const data = res.data.result.data;
         setCarBrands(data);
@@ -34,7 +34,7 @@ function CarValuation() {
 
   useEffect(() => {
     axios
-      .get(`https://car-evaluation-be.onrender.com/car/brand/${selectedBrand}`)
+      .get(`https://car-evaluation-be.tripllery.com/car/brand/${selectedBrand}`)
       .then((res) => {
         const data = res.data.result.data;
         setCarModels(data);
@@ -46,7 +46,7 @@ function CarValuation() {
 
   useEffect(() => {
     axios
-      .get(`https://car-evaluation-be.onrender.com/car/brand/model/${selectedModel}`)
+      .get(`https://car-evaluation-be.tripllery.com/car/brand/model/${selectedModel}`)
       .then((res) => {
         const data = res.data.result.data;
 
@@ -127,7 +127,7 @@ function CarValuation() {
     };
 
     axios
-      .post("https://car-evaluation-be.onrender.com/valuation", formData)
+      .post("https://car-evaluation-be.tripllery.com/valuation", formData)
       .then((response) => {
         const valuationResponse = response.data;
         navigate("/result", {
@@ -138,7 +138,7 @@ function CarValuation() {
         });
         setIsLoading(false)
         })
-      .post("https://car-evaluation-be.onrender.com/car/valuation", formData)
+      .post("https://car-evaluation-be.tripllery.com/car/valuation", formData)
       .then((res) => {
         const valuationResponse = res.data.result.data;
         if (valuationResponse === "Not found") {
