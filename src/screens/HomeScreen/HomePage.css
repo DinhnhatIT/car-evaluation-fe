@@ -1,0 +1,84 @@
+.homepage-container {
+  font-family: Arial, sans-serif;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 80%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.valuation-info {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.car-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.car-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.car-item:hover {
+  transform: scale(1.05);
+}
+
+.car-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+.carousel-banner {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.carousel-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+h3 {
+  padding-top: 10px;
+  font-size: clamp(2rem, 6vmin, 3rem);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: grid;
+  line-height: 1;
+}
+.gradient-text {
+  background: linear-gradient(to right, #0f0c29, #3b6c42, #01bf4c);
+  font-size: 50px;
+  font-weight: 700;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.car-item:hover h3 {
+  color: #01bf4c;
+}

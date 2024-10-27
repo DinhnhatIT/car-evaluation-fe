@@ -1,0 +1,29 @@
+/* NavbarComp.css */
+.custom-navbar {
+  background-color: #f8f9fa; /* Navbar background color */
+}
+
+.custom-navbar .custom-brand {
+  font-size: 1.5rem; /* Brand text size */
+  font-weight: bold;
+  color: #01bf4c; /* Default color for brand */
+}
+
+.custom-navbar .custom-nav-link {
+  font-size: 1.1rem; /* Link text size */
+  color: #000; /* Default link color (black) */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.custom-navbar .custom-nav-link:hover {
+  color: #08e8de; /* Blue color when hovered */
+}
+.nav-tab {
+  font-size: 28px;
+  margin-right: 20px;
+}
+.nav-tab:hover {
+  cursor: pointer;
+  color: #2b4d39;
+  font-size: 30px;
+}

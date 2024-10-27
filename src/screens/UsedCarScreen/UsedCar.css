@@ -1,0 +1,170 @@
+/* General styles */
+body {
+  font-family: 'Roboto', sans-serif; /* Cleaner, modern font */
+  color: #333; /* Neutral dark color for text */
+  background-color: #f4f4f9; /* Light background for improved readability */
+}
+
+.page-heading {
+  font-size: 1.5rem; /* Slightly larger for prominence */
+  color: #333;
+  font-weight: 600;
+}
+
+.header {
+  padding: 30px 0;
+  background-color: #fff; /* Cleaner background for the header */
+  border-bottom: 1px solid #ddd; /* Add bottom border for separation */
+}
+
+/* Sidebar container */
+.sidebar-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #ffffff; /* White sidebar for clean contrast */
+  padding: 25px;
+  border-right: 1px solid #eaeaea;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+/* Sidebar letters */
+.sidebar-letters .letter-title {
+  font-size: 1.1rem;
+  background-color: #f7e9d1; /* Softer color for better contrast */
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 8px; /* Rounded corners for modern feel */
+}
+
+.letter {
+  margin-bottom: 15px;
+}
+
+.sidebar-letters .brand-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.sidebar-letters .brand-item:hover {
+  background-color: #f0f8ff; /* Light blue hover effect */
+  border: 1px solid #007bff; /* Accent border on hover */
+}
+
+/* Brand logos */
+.brand-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  object-fit: contain; /* Ensure logos are contained within bounds */
+}
+
+/* Brand names */
+.brand-item span {
+  color: #333;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+/* Main content area */
+.container .main-content {
+  margin-top: 30px;
+  padding-left: 30px;
+}
+
+/* Budget filter */
+.main-content .form-control {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Budget search button */
+.main-content .btn {
+  background-color: #22a32d;
+  border-color: #2bc04e;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+
+.main-content .btn:hover {
+  background-color: #22b811;
+  border-color: #11b85c;
+}
+
+/* Section headers */
+.main-content .text-start {
+  padding: 10px 0;
+  background-color: #b2e1ae;
+  font-weight: 600;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Vehicle type section */
+.vehicle-types .vehicle-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  transition: transform 0.2s ease;
+}
+
+.vehicle-types .vehicle-image:hover {
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.vehicle-types div {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Car model listings */
+.main-content .car-model {
+  margin-bottom: 15px;
+}
+
+.car-model div {
+  font-size: 1rem;
+  color: #555;
+}
+
+.car-model .price-range {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.main-content .car-model:hover {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .sidebar-container {
+    height: auto;
+    position: relative;
+    border-right: none;
+    padding-bottom: 20px;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .vehicle-types div {
+    font-size: 0.9rem;
+  }
+
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+  }
+}
