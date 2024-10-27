@@ -25,8 +25,7 @@ function CarValuation() {
       .get("https://car-evaluation-be.onrender.com/car/brands")
       .then((res) => {
         const data = res.data.result.data;
-        const uniqueBrands = [...new Set(data.map((car) => car.carBrand))];
-        setCarBrands(uniqueBrands);
+        setCarBrands(data);
       })
       .catch((error) => {
         console.error("Error fetching car data:", error);
