@@ -51,11 +51,14 @@ function MainLayout() {
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <MainLayout />
-      </Router>
-    </div>
+      <>
+        <title>Car Evaluation</title>
+        <div className="App">
+          <Router>
+            <MainLayout/>
+          </Router>
+        </div>
+      </>
   );
 }
 
