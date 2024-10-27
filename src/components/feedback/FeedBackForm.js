@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/feedback";
+const API_URL = "https://car-evaluation-be.onrender.com/feedback";
 
 const FeedbackForm = () => {
   const [name, setName] = useState("");

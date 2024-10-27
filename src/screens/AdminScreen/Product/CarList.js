@@ -14,7 +14,7 @@ const CarList = () => {
   const numbers = [...Array(npage + 1).keys()].slice(1);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/getCars')
+    axios.get('https://car-evaluation-be.onrender.com/getCars')
       .then(res => {
         setRecords(res.data.result.data);
       })
@@ -22,7 +22,7 @@ const CarList = () => {
         console.error('Error fetching car data:', error);
       });
 
-    axios.get('http://localhost:8080/car/getCarRepairs')
+    axios.get('https://car-evaluation-be.onrender.com/car/getCarRepairs')
       .then(res => {
         setRepairs(res.data.result.data);
       })
@@ -35,7 +35,7 @@ const CarList = () => {
     const conf = window.confirm("Bạn có chắc chắn muốn xoá không!!!");
     
     if (conf) {
-      axios.delete(`http://localhost:8080/deleteCar/${id}`)
+      axios.delete(`https://car-evaluation-be.onrender.com/deleteCar/${id}`)
         .then(res => {
           alert('Hàng dữ liệu đã được xoá');
           setRecords(records.filter(record => record.id !== id));

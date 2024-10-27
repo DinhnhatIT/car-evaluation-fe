@@ -22,7 +22,7 @@ function CarValuation() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/car/brands")
+      .get("https://car-evaluation-be.onrender.com/car/brands")
       .then((res) => {
         const data = res.data.result.data;
         const uniqueBrands = [...new Set(data.map((car) => car.carBrand))];
@@ -35,7 +35,7 @@ function CarValuation() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/car/brand/${selectedBrand}`)
+      .get(`https://car-evaluation-be.onrender.com/car/brand/${selectedBrand}`)
       .then((res) => {
         const data = res.data.result.data;
         setCarModels(data);
@@ -47,7 +47,7 @@ function CarValuation() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/car/brand/model/${selectedModel}`)
+      .get(`https://car-evaluation-be.onrender.com/car/brand/model/${selectedModel}`)
       .then((res) => {
         const data = res.data.result.data;
 
@@ -128,7 +128,7 @@ function CarValuation() {
     };
 
     axios
-      .post("http://localhost:8080/valuation", formData)
+      .post("https://car-evaluation-be.onrender.com/valuation", formData)
       .then((response) => {
         const valuationResponse = response.data;
         navigate("/result", {
@@ -139,7 +139,7 @@ function CarValuation() {
         });
         setIsLoading(false)
         })
-      .post("http://localhost:8080/car/valuation", formData)
+      .post("https://car-evaluation-be.onrender.com/car/valuation", formData)
       .then((res) => {
         const valuationResponse = res.data.result.data;
         if (valuationResponse === "Not found") {

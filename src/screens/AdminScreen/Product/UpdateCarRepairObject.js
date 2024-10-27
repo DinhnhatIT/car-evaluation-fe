@@ -13,7 +13,7 @@ const UpdateCarRepairObject = () => {
   const { id } = useParams();  // Fetch 'id' from the URL params
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/car/getCarRepair/${id}`)  // Use 'id' in the GET request
+    axios.get(`https://car-evaluation-be.onrender.com/car/getCarRepair/${id}`)  // Use 'id' in the GET request
       .then((res) => {
         setInputData(res.data.result.data);
       })
@@ -44,7 +44,7 @@ const UpdateCarRepairObject = () => {
     setErrorMessage(''); 
 
     try {
-      axios.put(`http://localhost:8080/car/updateCarRepair/${id}`, inputData)  // Use 'id' in the PUT request
+      axios.put(`https://car-evaluation-be.onrender.com/car/updateCarRepair/${id}`, inputData)  // Use 'id' in the PUT request
         .then(res => {
           alert("Cập nhật thông tin sửa chữa thành công!");
           navigate('/admin/car-list');
