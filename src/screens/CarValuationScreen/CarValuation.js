@@ -25,16 +25,13 @@ function CarValuation() {
       .get("http://localhost:8080/car/brands")
       .then((res) => {
         const data = res.data.result.data;
-        setCarBrands(data);
+        const uniqueBrands = [...new Set(data.map((car) => car.carBrand))];
+        setCarBrands(uniqueBrands);
       })
       .catch((error) => {
         console.error("Error fetching car data:", error);
       });
   }, []);
-
-
-        const uniqueBrands = [...new Set(data.map((car) => car.carBrand))];
-        setCarBrands(uniqueBrands);
 
   useEffect(() => {
     axios
