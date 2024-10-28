@@ -127,17 +127,6 @@ function CarValuation() {
     };
 
     axios
-      .post("https://car-evaluation-be.tripllery.com/valuation", formData)
-      .then((response) => {
-        const valuationResponse = response.data;
-        navigate("/result", {
-          state: {
-            ...formData,
-            valuationResult: valuationResponse,
-          },
-        });
-        setIsLoading(false)
-        })
       .post("https://car-evaluation-be.tripllery.com/car/valuation", formData)
       .then((res) => {
         const valuationResponse = res.data.result.data;
