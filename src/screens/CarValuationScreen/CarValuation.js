@@ -114,6 +114,7 @@ function CarValuation() {
     const formData = {
       brand: selectedBrand,
       modelId: selectedModel,
+      brandName: selectedBrand,
       version: selectedVersion,
       year: selectedYear,
       price: purchasePrice,
@@ -439,7 +440,7 @@ function CarValuation() {
               </Col>
             </Row>
 
-            <Row>
+            <Row className="justify-content-center">
               {/* Purchase Price */}
               <Col md={6}>
                 <Form.Group
@@ -455,8 +456,14 @@ function CarValuation() {
                   <Form.Control
                     type="text"
                     placeholder="Nhập giá xe khi mua..."
-                    value={purchasePrice}
-                    onChange={(e) => setPurchasePrice(e.target.value)}
+                    value={purchasePrice
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                    onChange={(e) => {
+                      // Chỉ cho phép nhập số
+                      const value = e.target.value.replace(/[^\d]/g, "");
+                      setPurchasePrice(value);
+                    }}
                     style={{ color: "#595C5F" }}
                   />
                 </Form.Group>
