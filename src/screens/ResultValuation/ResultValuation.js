@@ -10,6 +10,13 @@ function Result() {
   const [isVisible, setIsVisible] = useState(false);
   const [valuationResult, setValuationResult] = useState(null);
   const location = useLocation();
+  const [brand, setBrand] = useState("");
+  const [model, setModel] = useState("");
+  const [version, serVersion] = useState("");
+  const [year, setYear] = useState("");
+  const [price, setPrice] = useState("");
+  const [buyPrice, setBuyPrice] = useState("");
+
 
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat("vi-VN").format(amount);
@@ -24,18 +31,27 @@ function Result() {
           const response = await axios.post(
             "https://car-evaluation-be.tripllery.com/car/valuation",
             {
-              carBrand: location.state.carBrand,
-              carModel: location.state.carModel,
-              carVersion: location.state.carVersion,
-              yearOfManufacture: location.state.yearOfManufacture,
+              modelId: location.state.modelId,
+              version: location.state.version,
+              year: location.state.year,
               kmDriven: location.state.kmDriven,
+              price: location.state.price,
+              repairAreas: location.state.repairAreas
             }
           );
+          const data = response.data.result.data;
+          setBrand(data.brandName);
+          setModel(data.modelName);
+          serVersion(data.version);
+          setYear(data.year);
+          setPrice(data.price);
+          setBuyPrice(data.buyPrice);
+          console.log(data.price/data.buyPrice);
 
           if (isMounted) {
             setValuationResult(response.data);
             setIsVisible(true);
-            setScore(response.data.condition || 0);
+            setScore(data.price/data.buyPrice*100);
           }
         } catch (error) {
           console.error("Error fetching valuation:", error);
@@ -54,9 +70,6 @@ function Result() {
     return <Navigate to="/" replace />;
   }
 
-  const { carBrand, carModel, carVersion, yearOfManufacture, kmDriven } =
-    location.state;
-
   return (
     <div className="modern-result-container" style={{ paddingTop: "100px" }}>
       <Row className="h-100 g-4">
@@ -67,11 +80,11 @@ function Result() {
                 <h2 className="info-title">Thông tin xe</h2>
                 <div className="info-content">
                   {Object.entries({
-                    "Hãng xe": carBrand,
-                    "Dòng xe": carModel,
-                    "Phiên bản": carVersion || "Không có",
-                    "Năm sản xuất": yearOfManufacture,
-                    "Số km đã đi": kmDriven,
+                    "Hãng xe": brand,
+                    "Dòng xe": model,
+                    "Phiên bản": version || "Không có",
+                    "Năm sản xuất": year,
+                    // "Số km đã đi": kmDriven,
                   }).map(([label, value]) => (
                     <div className="info-item" key={label}>
                       <span className="info-label">{label}</span>
@@ -133,7 +146,7 @@ function Result() {
                 <h2 className="info-title">Giá ước tính</h2>
                 <p className="price-amount">
                   {valuationResult
-                    ? formatCurrency(valuationResult.estimatedPrice)
+                    ? formatCurrency(price)
                     : "..."}
                   <small> VNĐ</small>
                 </p>
